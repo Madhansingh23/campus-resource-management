@@ -25,13 +25,13 @@ const BookingForm = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/api/bookings', formData);
-            alert('Booking Successful!'); // Alert for successful booking
+            alert('Booking Successful!'); 
             console.log('Booking Successful:', response.data);
         } catch (error) {
             if (error.response && error.response.status === 400) {
-                alert('Error: ' + error.response.data.message); // Alert for overlapping booking
+                alert('Error: ' + error.response.data.message); 
             } else {
-                alert('Error booking resource: ' + error.message); // General error alert
+                alert('Error booking resource: ' + error.message); 
             }
             console.error('Error booking resource:', error.response ? error.response.data.message : error.message);
         }
@@ -89,7 +89,6 @@ const BookingForm = () => {
     );
 };
 
-// Inline styles
 const styles = {
     form: {
         backgroundColor: 'white',
@@ -112,7 +111,7 @@ const styles = {
         transition: 'border-color 0.3s',
     },
     button: {
-        backgroundColor: '#4CAF50', // Green
+        backgroundColor: '#4CAF50', 
         color: 'white',
         padding: '10px',
         border: 'none',

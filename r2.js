@@ -19,10 +19,12 @@ const HallDetails = () => {
     <div className="d-flex flex-column flex-lg-row">
       {/* Left Sidebar */}
       <div className={`bg-light p-3 vh-100 ${sidebarOpen ? 'd-block' : 'd-none d-lg-block'}`} style={{ width: '80px' }}>
+  
         <ul className="nav flex-column text-center">
           <li className="nav-item mb-4">
             <HomeIcon style={{ fontSize: '36px' }} />
           </li>
+          
           <li className="nav-item mb-4">
             <PeopleIcon style={{ fontSize: '36px' }} />
           </li>
@@ -52,20 +54,20 @@ const HallDetails = () => {
       {/* Main Content */}
       <div className="container-fluid p-4" style={{ flex: 1 }}>
         <div className="d-flex justify-content-between align-items-center flex-wrap">
-          <button className="btn btn-primary mb-3">Today</button>
+          <button className="btn btn-primary mb-3" style={{fontSize:'15px'}}>Today</button>
           <h5 className="mb-3">Wednesday, April 26, 2023</h5>
         </div>
 
         <div className="mt-4 p-4 bg-light shadow-sm rounded">
-          <h3>Hall Details:</h3>
-          <div className="mt-3 p-3 bg-info text-white rounded">
+          <h3>Seminar Hall Details:</h3>
+          <div className="mt-3 p-3 fw-3 rounded" style={{fontSize: '1.5rem'}}>
             <p><strong>Name:</strong> KCG Hall</p>
-            <p><strong>Location:</strong> Eniac Block Left Gate</p>
+            <p><strong>Location:</strong> Civil Block Left Gate</p>
             <p><strong>Capacity:</strong> 60 seats + 6 separate seats</p>
             <p><strong>Seating Arrangement:</strong> Rectangular 3*20</p>
             <p><strong>Facilities:</strong></p>
             <ul>
-              <li>Wifi Access (4 no’s)</li>
+              <li>Wifi Access (4 no's)</li>
               <li>Visual Support: Projector</li>
               <li>Audio Support: 5 mics (4 + 1 fixed)</li>
             </ul>
@@ -74,11 +76,9 @@ const HallDetails = () => {
 
         {/* Photos Section */}
         <div className="mt-4">
-          <h4>Photos</h4>
+          <h1>Photos</h1>
           <div className="row g-3">
-            <div className="col-6 col-md-3">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR8b5esh9DJYBsJMFNZdt3e06OViB2JJQeGA&s" className="img-fluid rounded" alt="Hall 1" />
-            </div>
+           
             <div className="col-6 col-md-3">
               <img src="https://www.psnacet.edu.in/images/significance2.JPG" className="img-fluid rounded" alt="Hall 2" />
             </div>
@@ -88,6 +88,10 @@ const HallDetails = () => {
             <div className="col-6 col-md-3">
               <img src="https://www.psnacet.edu.in/old/psnaimage/infra/2.jpg" className="img-fluid rounded" alt="Hall 4" />
             </div>
+            <div className="col-6 col-md-3">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR8b5esh9DJYBsJMFNZdt3e06OViB2JJQeGA&s" className="img-fluid rounded" alt="Hall 1"/>
+            </div>
+
           </div>
         </div>
       </div>
@@ -98,18 +102,10 @@ const HallDetails = () => {
           <Calendar value={date} onChange={setDate} />
         </div>
         <div className="text-center">
-          <h5>Your Resources</h5>
-        </div>
-        <div className="text-center mt-4">
-          <h6>Richards Samuel</h6>
-          <img src="https://via.placeholder.com/50" className="rounded-circle" alt="user" />
-        </div>
-        <div className="text-center">
-        <button className="btn btn-primary fw-bold" style={{width:'150px',fontSize:'20px'}}>Book now</button>
+        <button className="btn btn-primary fw-bold" style={{width:'150px',fontSize:'20px'}}><a href='/brandoform' style={{textDecoration:'none',color:'white'}}>Book now</a></button>
         </div>
       </div>
     </div>
   );
 };
-
 export default HallDetails;

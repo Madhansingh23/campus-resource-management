@@ -19,12 +19,10 @@ const HallDetails = () => {
     <div className="d-flex flex-column flex-lg-row">
       {/* Left Sidebar */}
       <div className={`bg-light p-3 vh-100 ${sidebarOpen ? 'd-block' : 'd-none d-lg-block'}`} style={{ width: '80px' }}>
-  
         <ul className="nav flex-column text-center">
           <li className="nav-item mb-4">
             <HomeIcon style={{ fontSize: '36px' }} />
           </li>
-          
           <li className="nav-item mb-4">
             <PeopleIcon style={{ fontSize: '36px' }} />
           </li>
@@ -55,23 +53,26 @@ const HallDetails = () => {
       <div className="container-fluid p-4" style={{ flex: 1 }}>
         <div className="d-flex justify-content-between align-items-center flex-wrap">
           <button className="btn btn-primary mb-3" style={{fontSize:'15px'}}>Today</button>
-          <h5 className="mb-3">Wednesday, April 26, 2023</h5>
+          <h5 className="mb-3">Sunday, September 29, 2023</h5>
         </div>
 
         <div className="mt-4 p-4 bg-light shadow-sm rounded">
           <h3>Seminar Hall Details:</h3>
           <div className="mt-3 p-3 fw-3 rounded" style={{fontSize: '1.5rem'}}>
-            <p><strong>Name:</strong> KCG Hall</p>
+            <p><strong>Name:</strong> Seminar Hall</p>
             <p><strong>Location:</strong> Civil Block Left Gate</p>
             <p><strong>Capacity:</strong> 60 seats + 6 separate seats</p>
             <p><strong>Seating Arrangement:</strong> Rectangular 3*20</p>
             <p><strong>Facilities:</strong></p>
             <ul>
-              <li>Wifi Access (4 no's)</li>
+              <li>Wifi Access (4 no’s)</li>
               <li>Visual Support: Projector</li>
               <li>Audio Support: 5 mics (4 + 1 fixed)</li>
             </ul>
           </div>
+          <div className="text-center" style={{width:'100%'}}>
+        <button className="btn btn-primary fw-bold" style={{width:'150px',fontSize:'20px',width:'100%'}}><a href='/brandoform' style={{textDecoration:'none',color:'white'}}>Book this resource now</a></button>
+        </div>
         </div>
 
         {/* Photos Section */}
@@ -101,11 +102,10 @@ const HallDetails = () => {
         <div className="mb-4">
           <Calendar value={date} onChange={setDate} />
         </div>
-        <div className="text-center">
-        <button className="btn btn-primary fw-bold" style={{width:'150px',fontSize:'20px'}}><a href='/brandoform' style={{textDecoration:'none',color:'white'}}>Book now</a></button>
-        </div>
+        
       </div>
     </div>
   );
 };
+
 export default HallDetails;

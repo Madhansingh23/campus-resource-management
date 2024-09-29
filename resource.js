@@ -11,6 +11,8 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useRouter } from 'next/router';
 
+import TimelinePage from './timeline'; // Assuming TimelinePage is in the same folder
+
 const ResourceBooking = () => {
   const [selectedResource, setSelectedResource] = useState('');
   const [date, setDate] = useState(new Date());
@@ -59,11 +61,15 @@ const ResourceBooking = () => {
   return (
     <div className="d-flex flex-column flex-lg-row">
       {/* Left Sidebar */}
-      <div className="bg-light p-3 vh-100 d-none d-lg-block" style={{ width: '80px' }}>
+      <div className="bg-light p-3 vh-450 d-none d-lg-block" style={{ width: '80px' }}>
         <ul className="nav flex-column text-center">
           <li className="nav-item mb-4"><HomeIcon style={{ fontSize: '36px' }} /></li>
           <li className="nav-item mb-4"><PeopleIcon style={{ fontSize: '36px' }} /></li>
-          <li className="nav-item mb-4"><BusinessIcon style={{ fontSize: '36px' }} /></li>
+          <li className="nav-item mb-4">
+      <a href="/BookingsPage" title="Business" style={{color:'black'}}>
+        <BusinessIcon style={{ fontSize: '36px' }} />
+      </a>
+    </li>
           <li className="nav-item mb-4"><CalendarTodayIcon style={{ fontSize: '36px' }} /></li>
           <li className="nav-item mb-4"><InsertDriveFileIcon style={{ fontSize: '36px' }} /></li>
           <li className="nav-item"><SettingsIcon style={{ fontSize: '36px' }} /></li>
@@ -163,6 +169,13 @@ const ResourceBooking = () => {
                 ))}
               </ul>
             </div>
+          </Col>
+        </Row>
+
+        {/* Timeline for Hall Booking */}
+        <Row className="mg-6" style={{ marginTop: '250px', width: '100%' }}>
+          <Col style={{ width: '100%' }}>
+            <TimelinePage />
           </Col>
         </Row>
 
